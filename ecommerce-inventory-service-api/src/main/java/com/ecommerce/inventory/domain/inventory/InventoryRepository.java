@@ -1,4 +1,4 @@
-package com.ecommerce.inventory.inventory;
+package com.ecommerce.inventory.domain.inventory;
 
 import com.ecommerce.shared.jackson.DefaultObjectMapper;
 import com.ecommerce.shared.model.BaseRepository;

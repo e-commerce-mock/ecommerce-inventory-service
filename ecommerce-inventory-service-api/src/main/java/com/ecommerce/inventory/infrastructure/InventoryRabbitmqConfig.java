@@ -1,4 +1,4 @@
-package com.ecommerce.inventory;
+package com.ecommerce.inventory.infrastructure;
 
 import com.ecommerce.order.sdk.event.order.OrderCreatedEvent;
 import com.ecommerce.product.sdk.event.product.ProductCreatedEvent;

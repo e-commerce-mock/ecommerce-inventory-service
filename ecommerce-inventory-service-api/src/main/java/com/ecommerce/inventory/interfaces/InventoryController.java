@@ -1,5 +1,6 @@
-package com.ecommerce.inventory.inventory;
+package com.ecommerce.inventory.interfaces;
 
+import com.ecommerce.inventory.application.service.InventoryApplicationService;
 import com.ecommerce.inventory.sdk.command.inventory.IncreaseInventoryCommand;
 import com.ecommerce.inventory.sdk.representation.inventory.InventoryRepresentation;
 import org.springframework.web.bind.annotation.GetMapping;

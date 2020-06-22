@@ -1,4 +1,4 @@
-package com.ecommerce.inventory.about;
+package com.ecommerce.inventory.interfaces;
 
 import com.ecommerce.inventory.sdk.representation.about.AboutRepresentation;
 import org.springframework.core.env.Environment;

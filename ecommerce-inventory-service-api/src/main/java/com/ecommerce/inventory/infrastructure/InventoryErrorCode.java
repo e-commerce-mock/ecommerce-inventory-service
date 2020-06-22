@@ -1,4 +1,4 @@
-package com.ecommerce.inventory;
+package com.ecommerce.inventory.infrastructure;
 
 
 import com.ecommerce.shared.exception.ErrorCode;

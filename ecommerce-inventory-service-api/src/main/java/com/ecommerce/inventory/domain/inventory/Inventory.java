@@ -1,4 +1,4 @@
-package com.ecommerce.inventory.inventory;
+package com.ecommerce.inventory.domain.inventory;
 
 import com.ecommerce.inventory.sdk.event.inventory.InventoryChangedEvent;
 import com.ecommerce.inventory.sdk.representation.inventory.InventoryRepresentation;

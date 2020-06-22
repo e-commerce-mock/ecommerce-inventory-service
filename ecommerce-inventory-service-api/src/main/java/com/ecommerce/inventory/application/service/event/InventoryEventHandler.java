@@ -1,5 +1,7 @@
-package com.ecommerce.inventory.inventory;
+package com.ecommerce.inventory.application.service.event;
 
+import com.ecommerce.inventory.domain.inventory.Inventory;
+import com.ecommerce.inventory.domain.inventory.InventoryRepository;
 import com.ecommerce.order.sdk.event.order.OrderCreatedEvent;
 import com.ecommerce.order.sdk.event.order.OrderItem;
 import com.ecommerce.product.sdk.event.product.ProductNameUpdatedEvent;

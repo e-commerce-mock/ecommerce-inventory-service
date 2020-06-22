@@ -1,5 +1,7 @@
-package com.ecommerce.inventory.inventory;
+package com.ecommerce.inventory.application.service;
 
+import com.ecommerce.inventory.domain.inventory.Inventory;
+import com.ecommerce.inventory.domain.inventory.InventoryRepository;
 import com.ecommerce.inventory.sdk.command.inventory.IncreaseInventoryCommand;
 import com.ecommerce.inventory.sdk.representation.inventory.InventoryRepresentation;
 import lombok.extern.slf4j.Slf4j;
