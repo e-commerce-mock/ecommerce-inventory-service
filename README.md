@@ -1,68 +1,67 @@
-# 项目简介
-本项目是Ecommerce系统的库存（Inventory）子系统，用于管理产品库存。
+# Project Intro
+This project is the Inventory subsystem of the Ecommerce system, used to manage product inventory.
 
-Ecommerce项目包括：
+Ecommerce Project includes：
 
-|代码库|用途|地址|
+|Repo|Purpose|Link|
 | --- | --- | --- |
-|ecommerce-order-service|Order服务|[https://github.com/e-commerce-mock/ecommerce-order-service](https://github.com/e-commerce-mock/ecommerce-order-service)|
-|ecommerce-order-query-service|Order查询服务|[https://github.com/e-commerce-mock/ecommerce-order-query-service](https://github.com/e-commerce-mock/ecommerce-order-query-service)|
-|ecommerce-product-service|Product服务|[https://github.com/e-commerce-mock/ecommerce-product-service](https://github.com/e-commerce-mock/ecommerce-product-service)|
-|ecommerce-inventory-service|Inventory服务|[https://github.com/e-commerce-mock/ecommerce-inventory-service](https://github.com/e-commerce-mock/ecommerce-inventory-service)|
-|ecommerce-shared-model|共享模型，不含Spring|[https://github.com/e-commerce-mock/ecommerce-shared-model](https://github.com/e-commerce-mock/ecommerce-shared-model)|
-|ecommerce-spring-common|Spring共享基础配置|[https://github.com/e-commerce-mock/ecommerce-spring-common](https://github.com/e-commerce-mock/ecommerce-spring-common)|
-|ecommerce-devops|基础设施|[https://github.com/e-commerce-mock/ecommerce-devops](https://github.com/e-commerce-mock/ecommerce-devops)|
+|ecommerce-order-service|Order service|[https://github.com/e-commerce-mock/ecommerce-order-service](https://github.com/e-commerce-mock/ecommerce-order-service)|
+|ecommerce-order-query-service|Order query service|[https://github.com/e-commerce-mock/ecommerce-order-query-service](https://github.com/e-commerce-mock/ecommerce-order-query-service)|
+|ecommerce-product-service|Product service|[https://github.com/e-commerce-mock/ecommerce-product-service](https://github.com/e-commerce-mock/ecommerce-product-service)|
+|ecommerce-inventory-service|Inventory service|[https://github.com/e-commerce-mock/ecommerce-inventory-service](https://github.com/e-commerce-mock/ecommerce-inventory-service)|
+|ecommerce-shared-model|Pure Shared model without Spring context|[https://github.com/e-commerce-mock/ecommerce-shared-model](https://github.com/e-commerce-mock/ecommerce-shared-model)|
+|ecommerce-spring-common|Shared basic Spring configuration|[https://github.com/e-commerce-mock/ecommerce-spring-common](https://github.com/e-commerce-mock/ecommerce-spring-common)|
+|ecommerce-devops|Infrastructure|[https://github.com/e-commerce-mock/ecommerce-devops](https://github.com/e-commerce-mock/ecommerce-devops)|
 
 
-# 技术选型
+# Tech stacks
 Spring Boot、Gradle、MySQL、Junit 5、Rest Assured、Docker、RabbitMQ/Kafka
 
-# 本地构建
+# Build in local
 
-在本地构建之前必须完成以下步骤：
-- Pull最新[devops](https://github.com/e-commerce-mock/devops)代码
-- 命令行进入`devops`的`ecommerce-sample/devops/local/rabbitmq`目录
-- 运行`./start-rabbitmq.sh`，用于启动RabbitMQ，整个Ecommerce下的所有服务只需启动RabbitMQ一次
-- 进入`devops`的`ecommerce-sample/devops/local/zipkin`目录
-- 运行`./start-zipkin.sh`，用于启动zipkin服务器，整个Ecommerce下的所有服务只需启动Zipkin一次
+The following steps must be completed before building locally：
+- Pull latest[devops](https://github.com/e-commerce-mock/devops)代码
+- Go to folder `ecommerce-sample/devops/local/rabbitmq` of `devops`  
+- Run `./start-rabbitmq.sh` to start RabbitMQ. You only need to start RabbitMQ once to serve all services under the entire Ecommerce
+- Go to folder `ecommerce-sample/devops/local/zipkin` of `devops`
+- Run `./start-zipkin.sh` to start zipkin server. You only need to start Zipkin once to serve all services under the entire Ecommerce
 
-|功能|命令|备注|
+|Function|Command|Notes|
 | --- | --- | --- |
-|生成IntelliJ工程|`./idea.sh`|自动打开IntelliJ|
-|本地运行|`./run.sh`|自动启动MySQL，开启HTTP 8083端口，监听5007调试端口|
-|本地构建|`./local-build.sh`|启动启动MySQL，运行所有类型的自动化测试|
-|停止MySQL|`./gradlew composeDown`|将清空所有数据|
-|手动启动MySQL|`./gradlew composeUp`||
-|发布sdk|`./publish-sdk.sh`|可以通过修改`gradle.properties`文件中的`version`指定版本|
+|Generate IntelliJ project|`./idea.sh`|Automatically open IntelliJ|
+|Run locally|`./run.sh`|Automatically start MySQL, open HTTP 8083 port, listen on 5007 debugging port|
+|Build locally|`./local-build.sh`|Start MySQL, run all types of automated tests|
+|Stop MySQL|`./gradlew composeDown`|All data will be cleared|
+|Start MySQL manually|`./gradlew composeUp`||
+|Publish sdk|`./publish-sdk.sh`|The version can be specified by modifying the `version` in the `gradle.properties` file|
 
-# 领域对象
-|领域对象|中文名|业务功能|
+# Domain Object
+|Domain Object|Business Feature|
 | --- | --- | --- |
-|Inventory|库存|表示某个Product的库存信息|
+|Inventory|Represents the inventory information of a product|
 
-# 测试策略
-|测试类型|代码目录|测试内容|
+# Test strategy
+|Test Type|Code Directory|Test Content|
 | --- | --- | --- |
-|单元测试|`src/test/java`|包含核心领域模型（包含领域对象和Factory类）的测试|
-|组件测试|`src/componentTest/java`|用于测试一些核心的组件级对象，比如Repository|
-|API测试|`src/apiTest/java`|模拟客户端调用API|
+|unit test|`src/test/java`|Contains tests for core domain models (including domain objects and Factory classes)|
+|Component test|`src/componentTest/java`|Used to test some core component-level objects, such as Repository|
+|API Test|`src/apiTest/java`|Simulate client calling API|
 
-# 技术架构
-技术架构图
+# Technology Architecture
+Technical architecture diagram
 
-# 部署架构
-部署架构图
+# Deployment architecture
+Deployment architecture diagram
 
-# 外部依赖
-列出项目所依赖的其他系统，比如订单系统依赖于会员系统。
+# External dependencies
+List other systems that the project depends on, for example, the order system depends on the membership system.
 
-# 环境信息
-列出各个环境的访问方式，数据库连接等。
+# Environmental information
+List the access methods of each environment, database connection, etc.
 
-# 编码实践
-列出常用的公共的编码实践方式。
+# Coding Practice
+List commonly used public coding practices.
 
 # FAQ
-常见问题列表
 
-# 原则
+# Principle
