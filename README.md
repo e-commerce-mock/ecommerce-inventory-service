@@ -47,7 +47,7 @@ The following steps must be completed before building locally：
 |Component test|`src/componentTest/java`|Used to test some core component-level objects, such as Repository|
 |API Test|`src/apiTest/java`|Simulate client calling API|
 
-# Technology Architecture
+# Technical Architecture
 Technical architecture diagram
 
 # Deployment architecture
