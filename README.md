@@ -32,18 +32,18 @@ The following steps must be completed before building locally：
 |Run locally|`./run.sh`|Automatically start MySQL, open HTTP 8083 port, listen on 5007 debugging port|
 |Build locally|`./local-build.sh`|Start MySQL, run all types of automated tests|
 |Stop MySQL|`./gradlew composeDown`|All data will be cleared|
-|Start MySQL manually|`./gradlew composeUp`||
+|Start MySQL|`./gradlew composeUp`||
 |Publish sdk|`./publish-sdk.sh`|The version can be specified by modifying the `version` in the `gradle.properties` file|
 
 # Domain Object
-|Domain Object|Business Feature|
+|Domain Object|Business|
 | --- | --- | --- |
 |Inventory|Represents the inventory information of a product|
 
 # Test strategy
 |Test Type|Directory|Description|
 | --- | --- | --- |
-|unit test|`src/test/java`|Contains tests for core domain models (including domain objects and Factory classes)|
+|Unit test|`src/test/java`|Contains tests for core domain models (including domain objects and Factory classes)|
 |Component test|`src/componentTest/java`|Used to test some core component-level objects, such as Repository|
 |API Test|`src/apiTest/java`|Simulate client calling API|
 
