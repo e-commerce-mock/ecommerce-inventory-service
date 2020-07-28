@@ -41,7 +41,7 @@ The following steps must be completed before building locally：
 |Inventory|Represents the inventory information of a product|
 
 # Test strategy
-|Test Type|Code Directory|Test Content|
+|Test Type|Directory|Description|
 | --- | --- | --- |
 |unit test|`src/test/java`|Contains tests for core domain models (including domain objects and Factory classes)|
 |Component test|`src/componentTest/java`|Used to test some core component-level objects, such as Repository|
